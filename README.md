@@ -1,2 +1,3 @@
-# employee-mannagment-sys
-employee mannagment system for startups
+# employee-management-sys
+
+employee management system for startups

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminController">
+   <children>
+      <TabPane prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Workers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="321.0" prefHeight="681.0" prefWidth="959.0">
+                           <children>
+                              <ScrollPane>
+                                 <content>
+                                    <TableView fx:id="workerstable" onMouseClicked="#tableCickAction" prefHeight="681.0" prefWidth="945.0">
+                                      <columns>
+                                        <TableColumn fx:id="Namecol" prefWidth="182.0" text="Name" />
+                                        <TableColumn fx:id="Rolecol" prefWidth="170.0" text="Role" />
+                                          <TableColumn fx:id="Projectcol" prefWidth="152.0" text="Project" />
+                                          <TableColumn fx:id="Emailcol" prefWidth="154.0" text="Email" />
+                                          <TableColumn fx:id="usercol" prefWidth="123.0" text="UserName" />
+                                          <TableColumn fx:id="passcol" prefWidth="182.0" text="Password" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="-1.0" layoutY="61.0" prefHeight="620.0" prefWidth="320.0" spacing="20.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="34.0" prefWidth="324.0" text="Enter Worker Details">
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="Name" prefHeight="31.0" prefWidth="239.0" promptText="Name" />
+                              <ComboBox fx:id="Role" prefHeight="25.0" prefWidth="301.0" promptText="--Select Role--" />
+                              <ComboBox fx:id="Project" prefHeight="25.0" prefWidth="304.0" promptText="--Select Project--" />
+                              <TextField fx:id="Email" prefHeight="31.0" prefWidth="231.0" promptText="Email" />
+                              <TextField fx:id="txt_username" layoutX="20.0" layoutY="227.0" prefHeight="31.0" prefWidth="231.0" promptText="User name" />
+                              <TextField fx:id="txt_password" layoutX="20.0" layoutY="278.0" prefHeight="31.0" prefWidth="231.0" promptText="Password" />
+                              <Button mnemonicParsing="false" onAction="#addWorker" prefHeight="31.0" prefWidth="321.0" style="-fx-background-color: green;" text="Add Worker" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onAction="#deleteWorker" prefHeight="31.0" prefWidth="321.0" style="-fx-background-color: red;" text="DELETE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="33.0" prefWidth="299.0" style="-fx-background-color: gray;" text="LOGOUT" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold Italic" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Projects">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="144.0" layoutY="54.0" prefHeight="411.0" prefWidth="829.0">
+                           <children>
+                              <Label layoutX="24.0" layoutY="44.0" prefHeight="17.0" prefWidth="103.0" text="Project Name" />
+                              <Label layoutX="24.0" layoutY="78.0" prefHeight="17.0" prefWidth="103.0" text="Start Time" />
+                              <Label layoutX="24.0" layoutY="114.0" prefHeight="17.0" prefWidth="103.0" text="End Time" />
+                              <TextField fx:id="txt_projectName" layoutX="144.0" layoutY="40.0" prefHeight="25.0" prefWidth="216.0" />
+                              <TextField fx:id="txt_starttime" layoutX="144.0" layoutY="74.0" prefHeight="25.0" prefWidth="216.0" />
+                              <TextField fx:id="txt_endtime" layoutX="144.0" layoutY="110.0" prefHeight="25.0" prefWidth="216.0" />
+                              <Button layoutX="192.0" layoutY="181.0" mnemonicParsing="false" onAction="#addProductAction" prefHeight="25.0" prefWidth="168.0" text="Add " />
+                              <TableView fx:id="projectTable" layoutX="433.0" layoutY="44.0" prefHeight="200.0" prefWidth="353.0">
+                                <columns>
+                                  <TableColumn fx:id="projectNameColumn" prefWidth="104.0" text="Name" />
+                                  <TableColumn fx:id="projectStarttimeColumn" prefWidth="111.0" text="Start Time" />
+                                    <TableColumn fx:id="projectEndtimrColumn" prefWidth="137.0" text="End Time" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="90.0" layoutY="37.0" prefHeight="17.0" prefWidth="147.0" text="Add Project" underline="true">
+                           <font>
+                              <Font name="Algerian" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Current Progress">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="progressTable" layoutX="175.0" layoutY="126.0" prefHeight="293.0" prefWidth="826.0">
+                          <columns>
+                            <TableColumn fx:id="name_column" prefWidth="117.0" text="NAME" />
+                            <TableColumn fx:id="role_column" prefWidth="108.0" text="ROLE" />
+                              <TableColumn fx:id="project_column" prefWidth="108.0" text="PROJECT" />
+                              <TableColumn fx:id="starttime_column" prefWidth="108.0" text="START TIME" />
+                              <TableColumn fx:id="endtime_column" prefWidth="108.0" text="END TIME" />
+                              <TableColumn fx:id="opinion_column" prefWidth="276.0" text="OPNION" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="416.0" layoutY="41.0" prefHeight="39.0" prefWidth="345.0" text="PROGRESS ON PROJECTS" underline="true">
+                           <font>
+                              <Font name="Algerian" size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
